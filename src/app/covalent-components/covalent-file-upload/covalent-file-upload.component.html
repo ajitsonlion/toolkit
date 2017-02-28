@@ -1,0 +1,38 @@
+<md-card>
+   <md-card-content>
+    <h3 class="md-title">Single file selection or drop:</h3>
+    <p>Select Event: {{fileSelectMsg}}</p>
+    <p>Upload Event: {{fileUploadMsg}}</p>
+    <td-file-upload #singleFileUpload (select)="selectEvent($event)" (upload)="uploadEvent($event)" [disabled]="disabled">
+      <md-icon>file_upload</md-icon><span>{{ singleFileUpload.files?.name }}</span>
+      <template td-file-input-label>
+        <md-icon>attach_file</md-icon><span>Choose a file...</span>
+      </template>
+    </td-file-upload>
+  </md-card-content>
+  <md-divider></md-divider>
+  <md-card-actions>
+    <button md-button color="primary" (click)="toggleDisabled()" class="text-upper">Toggle Disable</button>
+  </md-card-actions>
+</md-card>
+<md-card>
+  <md-card-title>Multiple File Upload Button</md-card-title>
+  <md-divider></md-divider>
+   <md-card-content>
+    <h3 class="md-title">Multiple selection/drop for only .sql files and custom color palette:</h3>
+    <p>Select Event: {{fileSelectMultipleMsg}}</p>
+    <p>Upload Event: {{fileUploadMultipleMsg}}</p>
+    <td-file-upload #fileMultipleUpload (select)="selectMultipleEvent($event)" (upload)="uploadMultipleEvent($event)"
+                    accept=".sql" defaultColor="accent" activeColor="warn" cancelColor="primary" multiple [disabled]="disabled">
+      <md-icon>file_upload</md-icon>
+      <span>{{ fileMultipleUpload.files?.name || fileMultipleUpload.files?.length }} <span *ngIf="fileMultipleUpload.files?.length">files selected</span></span>
+      <template td-file-input-label>
+        <md-icon>attach_file</md-icon><span>Choose multiple .sql files...</span>
+      </template>
+    </td-file-upload>
+  </md-card-content>
+  <md-divider></md-divider>
+  <md-card-actions>
+    <button md-button color="primary" (click)="toggleDisabled()" class="text-upper">Toggle Disable</button>
+  </md-card-actions>
+</md-card>

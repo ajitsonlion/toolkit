@@ -1,0 +1,39 @@
+<md-card>
+  <md-card-content>
+    <div layout="row" layout-align="start center">
+      <md-button-toggle-group name="mode" (change)="modeChange()" [(ngModel)]="debounce">
+        <md-button-toggle mdTooltip="Enter/Clear Events" [value]="0"><md-icon>search</md-icon> Enter/Clear</md-button-toggle>
+        <md-button-toggle mdTooltip="Debounce Events" [value]="1"><md-icon>keyboard</md-icon> Debounce</md-button-toggle>
+      </md-button-toggle-group>
+    </div>
+    <h3>Search Input</h3>
+    <p>Search Value: {{searchInputTerm || 'Empty'}}</p>
+    <div layout="row" layout-align="start center">
+      <td-search-input *ngIf="debounce" [showUnderline]="true" placeholder="Search here" (searchDebounce)="searchInputTerm = $event"></td-search-input>
+      <td-search-input *ngIf="!debounce" [showUnderline]="true" placeholder="Search here" (search)="searchInputTerm = $event" (clear)="searchInputTerm = ''"></td-search-input>
+    </div>
+    <h3>Search Box</h3>
+    <p>Search Value: {{searchBoxTerm || 'Empty'}}</p>
+    <div layout-gt-xs="row">
+      <md-card flex-gt-xs="60">
+        <div layout="row" layout-align="start center" class="push-left push-right">
+          <span class="md-title">Card</span>
+          <span flex></span>
+          <td-search-box *ngIf="debounce" placeholder="Search here" [alwaysVisible]="alwaysVisible" (searchDebounce)="searchBoxTerm = $event" flex></td-search-box>
+          <td-search-box *ngIf="!debounce" placeholder="Search here" [alwaysVisible]="alwaysVisible" (search)="searchBoxTerm = $event" (clear)="searchBoxTerm = ''" flex></td-search-box>
+        </div>
+        <md-divider></md-divider>
+        <md-card-content>card content</md-card-content>
+      </md-card>
+    </div>
+    <h3>Search Box in Toolbar</h3>
+    <md-toolbar color="primary">
+      <td-search-box backIcon="arrow_back" placeholder="Search here" [alwaysVisible]="alwaysVisible" flex></td-search-box>
+      <button md-icon-button><md-icon>more_vert</md-icon></button>
+    </md-toolbar>
+  </md-card-content>
+  <md-divider></md-divider>
+  <md-card-actions>
+    <button md-button color="primary" (click)="toggleAlwaysVisible()" class="text-upper">Always Visible</button>
+  </md-card-actions>
+</md-card>
