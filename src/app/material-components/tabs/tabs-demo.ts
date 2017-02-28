@@ -94,7 +94,6 @@ export class TabsDemo {
 
 
 @Component({
-  moduleId: module.id,
   selector: 'sunny-routed-content',
   template: 'This is the routed body of the sunny tab.',
 })
@@ -102,7 +101,6 @@ export class SunnyTabContent {}
 
 
 @Component({
-  moduleId: module.id,
   selector: 'rainy-routed-content',
   template: 'This is the routed body of the rainy tab.',
 })
@@ -110,7 +108,6 @@ export class RainyTabContent {}
 
 
 @Component({
-  moduleId: module.id,
   selector: 'foggy-routed-content',
   template: 'This is the routed body of the foggy tab.',
 })

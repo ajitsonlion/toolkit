@@ -31,7 +31,6 @@ export class PortalDemo {
 
 
 @Component({
-  moduleId: module.id,
   selector: 'science-joke',
   template: `<p> 100 kilopascals go into a bar. </p>`
 })

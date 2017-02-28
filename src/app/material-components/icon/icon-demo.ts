@@ -13,9 +13,9 @@ export class IconDemo {
   constructor(mdIconRegistry: MdIconRegistry, sanitizer: DomSanitizer) {
     mdIconRegistry
         .addSvgIcon('thumb-up',
-            sanitizer.bypassSecurityTrustResourceUrl('icon/assets/thumbup-icon.svg'))
+            sanitizer.bypassSecurityTrustResourceUrl('assets/thumbup-icon.svg'))
         .addSvgIconSetInNamespace('core',
-            sanitizer.bypassSecurityTrustResourceUrl('icon/assets/core-icon-set.svg'))
+            sanitizer.bypassSecurityTrustResourceUrl('assets/core-icon-set.svg'))
         .registerFontClassAlias('fontawesome', 'fa');
   }
 }

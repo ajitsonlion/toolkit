@@ -1,19 +1,22 @@
 {
-  "name": "ajit-theme",
-  "version": "0.0.0",
+  "name": "tool-kit",
+  "version": "0.0.0-alpha1",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
     "gulp": "gulp",
     "node-sass": "node-sass",
     "start": "ng serve --hmr -e=dev-hmr --host 0.0.0.0",
-    "build": "ng build --sm=false --extract-css",
-    "build:themes":"node-sass --include-path scss ./src/themes/exb-light-theme.scss   ./dist/themes/main.css”",
+    "build": "ng build --sm=false --extract-css --base-href=./",
+    "build:themes": "webpack",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
-  "private": true,
+  "publishConfig": {
+    "registry": "http://192.168.24.3:8081/nexus/repository/npm/"
+  },
+  "private": false,
   "dependencies": {
     "@angular/common": "^2.4.0",
     "@angular/compiler": "^2.4.0",

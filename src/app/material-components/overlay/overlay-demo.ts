@@ -92,7 +92,6 @@ export class OverlayDemo {
 
 /** Simple component to load into an overlay */
 @Component({
-  moduleId: module.id,
   selector: 'rotini-panel',
   template: '<p class="demo-rotini">Rotini {{value}}</p>'
 })

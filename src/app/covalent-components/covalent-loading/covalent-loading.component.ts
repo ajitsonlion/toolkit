@@ -1,6 +1,5 @@
 import {AfterViewInit, Component, OnInit} from '@angular/core';
 import {LoadingMode, LoadingType, TdLoadingService} from '@covalent/core';
-import Timer = NodeJS.Timer;
 
 @Component({
   selector: 'app-covalent-loading',
@@ -100,7 +99,7 @@ export class CovalentLoadingComponent implements AfterViewInit, OnInit {
   toggleReplaceTemplateSyntax(): void {
     this._loadingService.register('replaceTemplateSyntax');
     let value: number = 0;
-    const interval: Timer = setInterval(() => {
+    const interval: any = setInterval(() => {
       this._loadingService.setValue('replaceTemplateSyntax', value);
       value = value + 10;
       if (value > 100) {
