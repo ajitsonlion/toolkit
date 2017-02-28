@@ -5,9 +5,10 @@
   "scripts": {
     "ng": "ng",
     "gulp": "gulp",
+    "node-sass": "node-sass",
     "start": "ng serve --hmr -e=dev-hmr --host 0.0.0.0",
-    "build": "ng build --sm=false",
-    "build:themes":"gulp sass",
+    "build": "ng build --sm=false --extract-css",
+    "build:themes":"node-sass --include-path scss ./src/themes/exb-light-theme.scss   ./dist/themes/main.css”",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
