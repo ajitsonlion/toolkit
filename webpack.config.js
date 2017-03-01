@@ -42,6 +42,6 @@ module.exports = {
     ]
   },
   plugins: [
-    new ExtractTextPlugin('./dist/themes/[name].css'),
+    new ExtractTextPlugin('./dist/themes/exb_material.css'),
    ],
 };

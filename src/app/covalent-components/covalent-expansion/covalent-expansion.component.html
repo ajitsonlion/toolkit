@@ -45,14 +45,14 @@
           </div>
         </td-expansion-panel>
         <td-expansion-panel label="Label goes here" sublabel="sublabel goes here" [disabled]="disabled">
-          <template td-expansion-panel-label>
+          <ng-template td-expansion-panel-label>
             <md-icon>star</md-icon>
             <span>Custom Label (template)</span>
-          </template>
-          <template td-expansion-panel-sublabel>
+          </ng-template>
+          <ng-template td-expansion-panel-sublabel>
             <md-icon>list</md-icon>
             <span>Custom Sublabel (template)</span>
-          </template>
+          </ng-template>
           <div class="md-padding">
             <h3 class="md-subhead">md-padding class</h3>
             <div>Phase 1</div>
@@ -66,11 +66,11 @@
     <div layout-gt-xs="row" layout-align-gt-xs="center start">
       <div flex-gt-xs="90">
         <td-expansion-panel [disabled]="disabled">
-          <template td-expansion-panel-header>
+          <ng-template td-expansion-panel-header>
             <md-toolbar color="accent">
               <span>Custom td-expansion-panel-header</span>
             </md-toolbar>
-          </template>
+          </ng-template>
           <td-expansion-summary>
             <div class="md-padding">
               <div flex layout-gt-xs="row" layout-align="start center">

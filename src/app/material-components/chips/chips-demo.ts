@@ -35,7 +35,7 @@ export class ChipsDemo {
   ];
 
   alert(message: string): void {
-    alert(message);
+    console.log(message);
   }
 
   add(input: ElementRef): void {

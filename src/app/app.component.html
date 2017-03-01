@@ -1,3 +1,25 @@
-<app-covalent-components></app-covalent-components>
+<nav md-tab-nav-bar>
+  <a md-tab-link
+     routerLink=""
+     routerLinkActive #rla="routerLinkActive"
+     [routerLinkActiveOptions]="{exact:true}"
+     [active]="rla.isActive">
+    Material
+  </a>
+  <a md-tab-link
+     routerLink="covalent"
+     routerLinkActive #covalent="routerLinkActive"
+     [routerLinkActiveOptions]="{exact:true}"
+     [active]="covalent.isActive">
+    Covalent
+  </a>
+  <a md-tab-link
+     routerLink="charts"
+     routerLinkActive #charts="routerLinkActive"
+     [routerLinkActiveOptions]="{exact:true}"
+     [active]="charts.isActive">
+    Charts
+  </a>
+</nav>
 
-<app-material-components></app-material-components>
+<router-outlet></router-outlet>

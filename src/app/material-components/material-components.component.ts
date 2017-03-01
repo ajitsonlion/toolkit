@@ -1,11 +1,13 @@
-import {Component} from '@angular/core';
-import {MdSnackBar, MdDialog} from '@angular/material';
+import {AfterViewInit, Component} from '@angular/core';
 
 @Component({
   selector: 'app-material-components',
   styleUrls: ['./material-components.component.scss'],
   templateUrl: './material-components.component.html'
 })
-export class MaterialComponentsComponent {
+export class MaterialComponentsComponent implements AfterViewInit {
+  public ngAfterViewInit(): void {
+    console.log('IAmReady');
+  }
 }
 

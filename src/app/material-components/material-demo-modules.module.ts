@@ -34,23 +34,24 @@ import {TooltipDemo} from './tooltip/tooltip-demo';
 import {PlatformDemo} from './platform/platform-demo';
 import {MaterialComponentsComponent} from './material-components.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {RouterModule} from '@angular/router';
-import {HttpModule} from '@angular/http';
-import {MaterialModule, MdSelectionModule} from '@angular/material';
+import {RouterModule, Routes} from '@angular/router';
+ import { MdSelectionModule} from '@angular/material';
 import {CovalentCoreModule} from '@covalent/core';
-import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
+export const MATERIAL_ROUTES: Routes = [
+  {
+    path: '',
+    component: MaterialComponentsComponent
+  }
 
+];
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
-    HttpModule,
-    ReactiveFormsModule,
-    RouterModule.forChild([]),
+     ReactiveFormsModule,
+    RouterModule.forChild(MATERIAL_ROUTES),
     CovalentCoreModule,
-    MaterialModule,
-    MdSelectionModule,
-    TranslateModule.forChild()
+     MdSelectionModule
   ],
   declarations: [
     MaterialComponentsComponent,
@@ -108,7 +109,9 @@ import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
   ],
   exports: [MaterialComponentsComponent]
 })
-export class MaterialDemoModulesModule {
+export    class MaterialDemoModulesModule {
+  constructor() {
 
+  }
 
 }
